@@ -1,0 +1,27 @@
+<%= form_with(model: recipe) do |form| %>
+
+  <div>
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :category, style: "display: block" %>
+    <%= form.text_field :category %>
+  </div>
+
+  <div>
+    <%= form.label :ingredients, style: "display: block" %>
+    <%= form.text_area :ingredients %>
+  </div>
+
+  <div>
+    <%= form.label :steps, style: "display: block" %>
+    <%= form.text_area :steps %>
+  </div>
+  
+  <div>
+    <%= form.submit %>
+  </div>
+
+<% end %>

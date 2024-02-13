@@ -1,2 +1,16 @@
+<p class="alert" style="color: green"><%= notice %></p>
 <h1>Recipes</h1>
 
+
+<% if @recipe.present? %>
+  <%= render @recipe %>
+<% else %>
+  <p>No recipe found.</p>
+<% end %>
+
+<div>
+  <%= link_to "Edit this recipe", edit_recipe_path(@recipe) %> |
+  <%= link_to "Back to recipes", recipes_path %>
+
+  <%= button_to "Delete this order", @recipe, method: :delete %>
+</div>

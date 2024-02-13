@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :recipes
   root 'recipes#index'
+  #  root to: redirect('/users/sign_up')
 end
