@@ -1,2 +1,15 @@
 <h1>Recipes</h1>
+<p style="color: green"><%= notice %></p>
 
+<% @recipes.each do |recipe| %>
+<%=recipe.user_id%>
+<%=recipe.title%>
+<%=recipe.category%>
+<%=recipe.ingredients%>
+<%=recipe.steps%>
+<%= link_to 'Edit', edit_recipe_path(recipe) %>
+<% end %> 
+
+<p>
+<%= link_to 'New Recipe', new_recipe_path %>
+</p>
