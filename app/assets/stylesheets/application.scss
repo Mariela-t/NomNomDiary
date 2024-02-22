@@ -16,5 +16,38 @@
 @import "bootstrap";
 
 :root {
-   --bs-body-bg: #edd6f0;
+   --bs-body-bg: #927fbf;
+}
+
+.navbar {
+  background-color: #363b4e;
+}
+
+.dropdown-toggle{
+   color: white;
+}
+
+.dropdown-toggle:hover {
+   color: #c4bbf0;
+}
+
+.dropdown-menu {
+  background-color: #363b4e;
+
+}
+.dropdown-item{
+   color: #c4bbf0;
+}
+
+.dropdown-item:hover {
+  background-color: #c4bbf0;
+  color: #927fbf;
+}
+
+.card {
+   background-color: #c4bbf0;
+   width: 60%;
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
 }
