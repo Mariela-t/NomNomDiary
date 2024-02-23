@@ -10,7 +10,8 @@
 <%= link_to 'Edit', edit_recipe_path(recipe) %>
 <% end %> 
 
-<p>
-<%= link_to 'New Recipe', new_recipe_path %>
-</p>
-<%= link_to "Logout", destroy_user_session_path, method: :delete %>
+
+<br/>
+<%= form_tag destroy_user_session_path, method: :delete do %>
+  <%= submit_tag "Sign out", class: "btn btn-secondary" %>
+<% end %>
