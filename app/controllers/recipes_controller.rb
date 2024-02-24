@@ -6,7 +6,7 @@ rescue_from ActiveRecord::RecordNotFound, with: :catch_not_found
 
 
   def index
-    @recipes = Recipe.all
+    @recipes = current_user.recipes
   end
 
   def show
@@ -26,12 +26,12 @@ rescue_from ActiveRecord::RecordNotFound, with: :catch_not_found
 
    def create
         @recipe = Recipe.new(recipe_params)
-
+        @recipe.user_id = current_user.id
         if @recipe.save
             flash.notice = "The recipe was created successfully"
             redirect_to @recipe
         else
-            render :new
+            render :new, status: 400
         end
     end
 
@@ -39,14 +39,18 @@ rescue_from ActiveRecord::RecordNotFound, with: :catch_not_found
         if @recipe.update(recipe_params)
             redirect_to @recipe
         else
-            render :edit
+            render :edit, status: 400
         end
     end
 
     def destroy
         set_recipe
-        @recipe.destroy
-        redirect_to recipes_path
+        if @recipe
+       @recipe.destroy
+       redirect_to recipes_path, notice: 'Recipe was successfully destroyed.'
+      else
+       redirect_to recipes_path, alert: 'Recipe not found.'
+      end
     end
 
     private
@@ -55,7 +59,7 @@ def recipe_params
     end
 
 def set_recipe
-        @recipe = Recipe.find(params[:id])
+        @recipe = Recipe.find_by(id: params[:id], user_id: current_user.id)
     end
 
     def catch_not_found(e)
