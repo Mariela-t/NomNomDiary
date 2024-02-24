@@ -1,15 +1,37 @@
-<h1>Recipes</h1>
+<h1>My Recipes:</h1>
 <p style="color: green"><%= notice %></p>
 
-<% @recipes.each do |recipe| %>
-<%=recipe.user_id%>
-<%=recipe.title%>
-<%=recipe.category%>
-<%=recipe.ingredients%>
-<%=recipe.steps%>
-<%= link_to 'Edit', edit_recipe_path(recipe) %>
-<% end %> 
 
-<p>
-<%= link_to 'New Recipe', new_recipe_path %>
-</p>
+ <div class="card">
+ <% @recipes.each do |recipe| %>
+  <div class="card-header">
+   <h3> <%=recipe.title%> </h3>
+  </div>
+  <div class="card-body">
+    <p class="card-text"> 
+     <strong>Category: </strong>
+        <%=recipe.category%>
+    </p>
+     <p class="card-text"> 
+     <strong>Ingredients: </strong>
+        <%=recipe.ingredients%>
+    </p>
+    <p class="card-text"> 
+    <strong>Steps: </strong>
+    <%=recipe.steps%>
+    </p>
+    <br/>
+    <%= link_to 'Edit', edit_recipe_path(recipe), class: "btn btn-secondary" %>
+    <%= link_to 'View this recipe', recipe_path(recipe), class: "btn btn-secondary" %>
+  </div>
+  <br/>
+<% end %>
+
+</div>
+
+
+
+<br/>
+<%= form_tag destroy_user_session_path, method: :delete do %>
+  <%= submit_tag "Sign out", class: "btn btn-secondary" %>
+<% end %>

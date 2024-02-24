@@ -11,8 +11,24 @@
   </head>
 
   <body>
-     <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
+   <nav class="navbar navbar-custom sticky-top">
+    <div class="btn-group">
+      <button class="btn dropdown-toggle" data-bs-toggle="dropdown" > 
+     Recipes
+      </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="/recipes"> 
+          Recipe List 
+        </a>
+        <a class="dropdown-item" href="/recipes/new"> 
+          New Recipe 
+        </a>
+      </div>
+      </div>
+  </nav>
+
+     <p class="notice"><%= flash.notice %></p>
+       <p class="alert"><%= flash.alert %></p>
     <%= yield %>
   </body>
 </html>
