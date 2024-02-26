@@ -14,9 +14,17 @@
  *= require_self
  */
 @import "bootstrap";
+@import "font-awesome";
 
 :root {
    --bs-body-bg: #927fbf;
+}
+
+.banner-background {
+  background-image: asset-url('baking.jpg');
+  background-size: cover;
+  font-family: 'KGRedHands';
+  color: rgb(3, 56, 3);
 }
 
 .navbar {
@@ -42,6 +50,14 @@
 .dropdown-item:hover {
   background-color: #c4bbf0;
   color: #927fbf;
+}
+
+.notice{
+   color: green;
+}
+
+.alert{
+   color: red;
 }
 
 .card {

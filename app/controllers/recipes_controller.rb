@@ -1,7 +1,7 @@
 class RecipesController < ApplicationController
 rescue_from ActiveRecord::RecordNotFound, with: :catch_not_found
 
- before_action :authenticate_user!, except: [:index, :show]
+ before_action :authenticate_user!
  before_action :set_recipe, only: [:show, :edit, :update, :destroy]
 
 

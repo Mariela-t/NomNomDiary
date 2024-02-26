@@ -11,6 +11,10 @@
   </head>
 
   <body>
+  <div class="banner-background p-5 text-center">
+  <h1>NomNomDiary</h1>
+  <p>What are we making today?</p> 
+  </div>
    <nav class="navbar navbar-custom sticky-top">
     <div class="btn-group">
       <button class="btn dropdown-toggle" data-bs-toggle="dropdown" > 
@@ -24,6 +28,17 @@
           New Recipe 
         </a>
       </div>
+    
+      <button class="btn dropdown-toggle" data-bs-toggle="dropdown" > 
+     <%= icon('fa-solid', 'user')%>
+      </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="/users/edit"> 
+          Edit User
+        </a>
+        <a class="dropdown-item"  href="/users/sign_out" >
+          Log out 
+        </a>
       </div>
   </nav>
 
