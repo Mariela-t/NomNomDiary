@@ -18,22 +18,28 @@
     <% end %>
 
   <div class="form-group">
-    <%= form.label :title, style: "display: block" %>
+    <%= form.label :title, style: "font-weight: bold"  %>
     <%= form.text_field :title, class: "form-control" %>
   </div>
+  
+  <br/>
 
   <div class="form-group">
-    <%= form.label :category, style: "display: block" %>
-    <%= form.text_field :category, class: "form-control" %>
+    <%= form.label :category, style: "font-weight: bold" %>
+    <%= form.select :category, options_for_select(['Dessert', 'Appetizer', 'Soup', 'Side', 'Beverage', 'Dinner', 'Lunch', 'Breakfast', 'Snack', 'N/A']), { include_blank: true }, class: "form-control" %>
   </div>
 
+  <br/>
+
   <div class="form-group">
-    <%= form.label :ingredients, style: "display: block" %>
+    <%= form.label :ingredients, style: "font-weight: bold" %>
     <%= form.text_area :ingredients, class: "form-control" %>
   </div>
 
+  <br/>
+
   <div class="form-group">
-    <%= form.label :steps, style: "display: block" %>
+    <%= form.label :steps, style: "font-weight: bold" %>
     <%= form.text_area :steps, class: "form-control" %>
   </div>
   <br/>

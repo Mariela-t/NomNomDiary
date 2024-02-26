@@ -14,29 +14,50 @@
  *= require_self
  */
 @import "bootstrap";
+@import "font-awesome";
 
 :root {
-   --bs-body-bg: #927fbf;
+  --bs-body-bg: #927fbf;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.banner-background {
+  background-image: asset-url("baking.jpg");
+  background-size: cover;
+  font-family: "KGRedHands";
+  color: #363b4e;
 }
 
 .navbar {
   background-color: #363b4e;
 }
 
-.dropdown-toggle{
-   color: white;
+.btn-home {
+  background-color: #363b4e;
+}
+
+.nav-item {
+  color: white;
+}
+
+.nav-item:hover {
+  color: #c4bbf0;
+}
+
+.dropdown-toggle {
+  color: white;
 }
 
 .dropdown-toggle:hover {
-   color: #c4bbf0;
+  color: #c4bbf0;
 }
 
 .dropdown-menu {
   background-color: #363b4e;
-
 }
-.dropdown-item{
-   color: #c4bbf0;
+.dropdown-item {
+  color: #c4bbf0;
 }
 
 .dropdown-item:hover {
@@ -44,14 +65,50 @@
   color: #927fbf;
 }
 
-.card {
-   background-color: #c4bbf0;
-   width: 60%;
-   display: block;
-   margin-left: auto;
-   margin-right: auto;
+.btn-out {
+  background-color: #363b4e;
+  color: #c4bbf0;
+  border-style: none;
 }
 
-h1{
-   text-align: center;
+.btn-out:hover {
+   color: #c4bbf0;
+}
+
+.notice {
+  color: green;
+}
+
+.alert {
+  color: rgb(120, 13, 13);
+}
+
+.card {
+  background-color: #c4bbf0;
+  width: 60%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.cupcake {
+  width: 60%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.home {
+  text-align: center;
+  font-size: 16px;
+  margin-left: 40px;
+  margin-right: 40px;
 }
