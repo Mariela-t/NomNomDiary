@@ -16,6 +16,14 @@
   <p>What are we making today?</p> 
   </div>
    <nav class="navbar navbar-custom sticky-top">
+   <div class="btn-group">
+    <button class="btn-home" > 
+    <a class="nav-item"  href="/home/index">
+     <%= icon('fa', 'home')%> 
+     </a>
+      </button>
+    </div>
+
     <div class="btn-group">
       <button class="btn dropdown-toggle" data-bs-toggle="dropdown" > 
      Recipes
@@ -33,15 +41,18 @@
      <%= icon('fa-solid', 'user')%>
       </button>
       <div class="dropdown-menu">
+      <a class="dropdown-item"  href="/users/sign_in" >
+          Log in
+        </a>
         <a class="dropdown-item" href="/users/edit"> 
           Edit User
         </a>
-        <a class="dropdown-item"  href="/users/sign_out" >
-          Log out 
-        </a>
+        <%= form_tag destroy_user_session_path, method: :delete do %>
+         <%= submit_tag "Sign out", class: "btn-out" %>
+        <% end %>
       </div>
   </nav>
-
+<br/>
      <p class="notice"><%= flash.notice %></p>
        <p class="alert"><%= flash.alert %></p>
     <%= yield %>
