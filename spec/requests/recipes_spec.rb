@@ -47,7 +47,7 @@ RSpec.describe "Recipes", type: :request do
     it "created new recipe" do
       user = FactoryBot.create(:user)
       sign_in user 
-      get "/recipes", params: {recipe: FactoryBot.attributes_for(:recipe)}
+      post "/recipes", params: {recipe: FactoryBot.attributes_for(:recipe)}
       expect(response).to redirect_to(assigns(:recipe))
       follow_redirect!
       expect(response).to render_template(:show)
