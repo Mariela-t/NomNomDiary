@@ -37,6 +37,7 @@ rescue_from ActiveRecord::RecordNotFound, with: :catch_not_found
 
     def update
         if @recipe.update(recipe_params)
+          @recipe.avatar.attach(params[:avatar]) if params[:avatar].present?
             redirect_to @recipe
         else
             render :edit, status: 400
@@ -55,7 +56,7 @@ rescue_from ActiveRecord::RecordNotFound, with: :catch_not_found
 
     private
 def recipe_params
-        params.require(:recipe).permit(:title, :category, :ingredients, :steps)
+        params.require(:recipe).permit(:title, :category, :ingredients, :steps, :avatar)
     end
 
 def set_recipe
