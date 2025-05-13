@@ -83,3 +83,5 @@ gem "devise", "~> 4.9"
 gem "bootstrap", "~> 5.3"
 
 gem "font-awesome-sass", "~> 6.5"
+
+gem "rack", ">= 2.2.14"
