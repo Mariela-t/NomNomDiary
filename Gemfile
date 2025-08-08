@@ -85,3 +85,5 @@ gem "bootstrap", "~> 5.3"
 gem "font-awesome-sass", "~> 6.5"
 
 gem "rack", ">= 2.2.14"
+
+gem "nokogiri", ">= 1.18.9"
