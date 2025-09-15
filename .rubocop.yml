@@ -13,3 +13,39 @@ Style/Documentation:
 
 Style/FrozenStringLiteralComment:
   Enabled: false
+
+Style/SpecialGlobalVars:
+  Exclude: 
+    - 'bin/*'
+
+Metrics/BlockLength:
+  Exclude: 
+    - 'db/schema.rb'
+    - 'spec/requests/recipes_spec.rb'
+
+Layout/LineLength: 
+  Exclude: 
+    - 'config/initializers/devise.rb'
+    - 'bin/*'
+
+Metrics/AbcSize:
+  Exclude:
+    - 'db/migrate/*'
+
+Metrics/MethodLength:
+  Exclude:
+    - 'db/migrate/*'
+    - 'bin/*'
+
+Style/ClassAndModuleChildren: 
+  Exclude: 
+    - 'test/**/*'
+    - 'spec/**/*'
+
+Metrics/CyclomaticComplexity:
+  Exclude:
+    - 'bin/*'
+
+Metrics/PerceivedComplexity:
+  Exclude:
+    - 'bin/*'

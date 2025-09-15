@@ -61,9 +61,9 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find_by(id: params[:id], user_id: current_user.id)
   end
 
-  def catch_not_found(e)
+  def catch_not_found(error)
     Rails.logger.debug('We had a not found exception.')
-    flash.alert = e.to_s
+    flash.alert = error.to_s
     redirect_to recipes_path
   end
 end
