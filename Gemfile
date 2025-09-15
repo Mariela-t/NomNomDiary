@@ -76,6 +76,9 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 
+  gem 'rubocop', require: false
+  gem 'rubocop-rails', require: false 
+
 end
 
 gem "devise", "~> 4.9"
